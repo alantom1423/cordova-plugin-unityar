@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-unityar" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>UnityAR</name>
+    <js-module name="UnityAR" src="www/UnityAR.js">
+        <clobbers target="UnityAR" />
+    </js-module>
+
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="UnityAR">
+                <param name="android-package" value="cordova.plugin.unityar.UnityAR" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/UnityAR.java" target-dir="src/cordova/plugin/unityar" />
+        <source-file src="src/android/MainUnityActivity.java" target-dir="src/cordova/plugin/unityar" />
+        <config-file parent="/*" target="AndroidManifest.xml" />
+         <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="cordova.plugin.unityar.MainUnityActivity"
+                android:screenOrientation="fullSensor"
+                android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+                android:hardwareAccelerated="false"
+                android:process=":Unity"
+                android:label="@string/app_name">
+            </activity>
+        </config-file>
+        <resource-file src="src/android/unitystring.xml" target="res/values/unitystring.xml" />
+    </platform>
+
+
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="UnityAR">
+                <param name="ios-package" value="UnityAR" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>For Augmented reality</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="UILaunchStoryboardName">
+            <string>LaunchScreen-iPhone</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="UILaunchStoryboardName~ipad">
+            <string>LaunchScreen-iPad</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="UILaunchStoryboardName~iphone">
+            <string>LaunchScreen-iPhone</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="ILaunchStoryboardName~ipod">
+            <string>LaunchScreen-iPhone</string>
+        </config-file>
+        <source-file src="src/ios/UnityAR.mm" />
+        <source-file src="src/ios/UnityAR.h" />
+    </platform>
+</plugin>

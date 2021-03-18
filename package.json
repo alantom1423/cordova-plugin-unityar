@@ -1,0 +1,18 @@
+{
+  "name": "unityar",
+  "version": "1.0.0",
+  "description": "Plugin to integrate unity3d player into a cordova application for both android and iOS platforms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "unityionic",
+    "ionicunity",
+    "cordova",
+    "unity",
+    "ionic"
+  ],
+  "author": "Alan Jose",
+  "license": "ISC"
+}
