@@ -51,7 +51,7 @@ The following method can be accessed from *CordovaComm.cs* Unity C# script to qu
 
 
 **For Android** :- Export project from Unity to generate an android project 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/unityscreen1.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/unityscreen1.jpeg)
 
 **For iOS** :- Export as an iOS project to a folder.
 
@@ -62,7 +62,7 @@ The following method can be accessed from *CordovaComm.cs* Unity C# script to qu
 - Copy *unitylibrary* generated in the unity build to the *platforms/android* folder of the cordova project
 - Add `android.library.reference.3=unityLibrary` to ***project.properties***
 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/androidscreen1.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen1.jpeg)
 
 - Add the following code
        flatDir {
@@ -70,13 +70,13 @@ The following method can be accessed from *CordovaComm.cs* Unity C# script to qu
        }
 to `allprojects { repositries {  }}` in ***build.gradle*** in platforms/android folder
 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/androidscreen2.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen2.jpeg)
 
 - Add the following
 		implementation fileTree(dir: project(':unityLibrary').getProjectDir().toString() + ('\\libs'), include: ['*.jar'])
 to `dependencies` below subproject comment in platforms/android/app  ***build.gradle*** folder
 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/androidscreen3.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen3.jpeg)
 
 - Make sure **min sdk** version of both cordova project and unityproject are same
 - From **AndroidManifest.xml** of **unityLibrary** folder, remove the following code to prevent two apps from being installed on the device
@@ -91,13 +91,13 @@ to `dependencies` below subproject comment in platforms/android/app  ***build.gr
 - Build the cordova project for iOS from terminal. When it fails open the workspace in xcode
 - Delete *main.mm* from Cordova project *Other Sources*  Folder
 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen1.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen1.jpeg)
 
 - Copy or replace *AppDelegate.mm* and *AppDelegate.h*  from the files folder of this repo to Cordova project. The files should exist in *Classes* folder of cordova ios project
 
 - Add unity ios project to this workspace
 
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen2.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen2.jpeg)
 
 - Add *UnityFramework.framework*
   Select cordovaiOSApp target from cordovaiOSApp project.
@@ -106,20 +106,20 @@ to `dependencies` below subproject comment in platforms/android/app  ***build.gr
   In `Build Phases` tab, expand `Link Binary With Libraries`.
   Remove `UnityFramework.framework` from the list (select it and press '-' ).
   
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen3.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen3.jpeg)
   
 - Expose *NativeCallProxy.h*
   In Project navigator, find and select `Unity-iPhone/Libraries/Plugins/iOS/NativeCallProxy.h`.
   Enable *UnityFramework* in Target Membership and set header visibility from *project* to *public* (small dropdown on right side to UnityFramework)
   
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen4.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen4.jpeg)
 
 - Make *Data* folder to be part of the UnityFramework
     change *Target Membership* for Data folder to *UnityFramework*
  
-  ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen5.jpeg)
+  ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen5.jpeg)
  
  - Copy Launcher files to Current project for splashscreen.mm
  
-   ![](https://github.com/alantom1423/cordova-plugin-unityar/images/iosscreen6.jpeg) 
+   ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/iosscreen6.jpeg) 
 
