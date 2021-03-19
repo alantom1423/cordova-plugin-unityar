@@ -1,5 +1,5 @@
 {
-  "name": "unityar",
+  "name": "cordova-plugin-unityar",
   "version": "1.0.0",
   "description": "Plugin to integrate unity3d player into a cordova application for both android and iOS platforms",
   "cordova": {
