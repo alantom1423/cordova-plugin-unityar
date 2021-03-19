@@ -65,25 +65,25 @@ The following method can be accessed from *CordovaComm.cs* Unity C# script to qu
   ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen1.jpeg)
 
 - Add the following code
-       flatDir {
+       `flatDir {
        		dirs "${project(':unityLibrary').projectDir}/libs"
-       }
+       }`
 to `allprojects { repositries {  }}` in ***build.gradle*** in platforms/android folder
 
   ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen2.jpeg)
 
 - Add the following
-		implementation fileTree(dir: project(':unityLibrary').getProjectDir().toString() + ('\\libs'), include: ['*.jar'])
+		`implementation fileTree(dir: project(':unityLibrary').getProjectDir().toString() + ('\\libs'), include: ['*.jar'])`
 to `dependencies` below subproject comment in platforms/android/app  ***build.gradle*** folder
 
   ![](https://github.com/alantom1423/cordova-plugin-unityar/blob/master/images/androidscreen3.jpeg)
 
 - Make sure **min sdk** version of both cordova project and unityproject are same
 - From **AndroidManifest.xml** of **unityLibrary** folder, remove the following code to prevent two apps from being installed on the device
-		<intent-filter>
+		`<intent-filter>
 			<action android:name="android.intent.action.MAIN" />
         	<category android:name="android.intent.category.LAUNCHER" />
-		</intent-filter>
+		</intent-filter>`
 
 
 #### Cordova iOS Setup
