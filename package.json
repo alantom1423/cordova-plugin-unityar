@@ -2,6 +2,13 @@
   "name": "unityar",
   "version": "1.0.0",
   "description": "Plugin to integrate unity3d player into a cordova application for both android and iOS platforms",
+  "cordova": {
+    "id": "cordova-plugin-unityar",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +26,8 @@
   ],
   "author": "Alan Jose",
   "license": "ISC",
-  "homepage": "https://github.com/alantom1423/cordova-plugin-unityar"
+  "bugs": {
+    "url": "https://github.com/alantom1423/cordova-plugin-unityar/issues"
+  },
+  "homepage": "https://github.com/alantom1423/cordova-plugin-unityar#readme"
 }
