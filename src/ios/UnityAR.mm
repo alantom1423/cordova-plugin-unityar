@@ -47,7 +47,7 @@ NSString *pluginCallbackId = @"";
 - (void) sendMessage:(NSString*) msg
 {
     CDVPluginResult *pluginResult  = nil;
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"Hello Bye"]];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:msg]];
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:pluginCallbackId];
 }

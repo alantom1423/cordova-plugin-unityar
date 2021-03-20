@@ -22,7 +22,7 @@ I would like to give credits to the following repos that helped me while creatin
 
 Import the plugin to the cordova project
 
-`cordova plugin add https://github.com/alantom1423/cordova-plugin-unityar.git`
+`cordova plugin add cordova-plugin-unityar`
 
 - To launch unity from the cordova project call the following method in your javascript
 
